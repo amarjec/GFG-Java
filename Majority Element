@@ -1,0 +1,59 @@
+
+
+//User function Template for Java
+
+class Solution
+{
+    static int majorityElement(int arr[], int size)
+    {
+        // your code here
+        if (size ==1) {
+            return arr[0];
+        }
+         if(size == 2) {
+            if(arr[0]==arr[1]) {
+                return arr[0];
+            }
+            return -1;
+        }
+    //     Arrays.sort(arr);
+    //     int cond =size/2;
+    //     for (int i=0; i<size; i++) {
+    //         int count=1;
+    //             if (arr[i]<arr[i+1]) {
+    //                 break;
+    //             }
+    //             if (arr[i] == arr[i+1]) {
+    //               count++;
+    //               if (count > cond) {
+    //                   return arr[i];
+    //               }
+    //             }
+    //     }
+        
+    //   return -1; 
+      
+           Arrays.sort(arr);
+        
+        int majorityElem = -1;
+        int count = 1; // Starting with count as 1 for the first element
+        
+        for (int i = 0; i < size; i++) {
+            if (i != 0 && arr[i] == arr[i - 1]) {
+                count++; // Increment count if the current element is the same as the previous one
+            } else {
+                // Reset count if the current element is different from the previous one
+                count = 1;
+            }
+            
+            // Check if the count exceeds half the size of the array
+            if (count > size / 2) {
+                majorityElem = arr[i];
+                break; // No need to continue if majority element is found
+            }
+        }
+        
+        return majorityElem;
+        
+    }
+}
