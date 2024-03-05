@@ -1,0 +1,18 @@
+//User function Template for Java
+class Solution{
+    static String compareNM(int n,int m){
+        // code here
+        if (n<m) {
+            //  System.out.print("lesser");
+            return "lesser";
+        }
+        else if (n==m) {
+            //  System.out.print("equal");
+            return "equal";
+        }
+        else {
+            //  System.out.print("greater");
+            return "greater";
+        }
+    }
+}
