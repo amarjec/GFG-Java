@@ -1,0 +1,18 @@
+class Solution {
+    long findNth(long N)
+    {
+        //code here
+        long result = 0;
+        long mul = 1;
+        while(N>0){
+            long num = N%9;
+            if(num>=9){
+                num++;
+            }
+            result+=num*mul;
+            mul*=10;
+            N/=9;
+        }
+        return result;
+    }
+}
