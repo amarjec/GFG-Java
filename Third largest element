@@ -1,0 +1,54 @@
+
+
+class Solution
+{
+    int thirdLargest(int arr[], int n)
+    {
+	    // Your code here
+	    int count = 0;
+        for (int i =0; i<1; i++) {
+            for (int j =0; j<arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
+                }
+            }
+            if (count == arr.length) {
+             return -1;   
+            }
+            else if (arr.length <2) {
+               return -1; 
+            }
+        }
+        int max =0;
+        for (int i =0; i<arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i]; 
+            }
+        }
+        int second_max =0;
+        for (int i=0; i<arr.length; i++) {
+            if (arr[i] == max) {
+               continue;
+            }
+            else {
+                 if (arr[i] > second_max) {
+                    second_max = arr[i];
+                }
+            }
+        }
+        
+        int third_max =0;
+        for (int i=0; i<arr.length; i++) {
+            if (arr[i] == second_max || arr[i] == max) {
+               continue;
+            }
+            else {
+                 if (arr[i] > third_max) {
+                    third_max = arr[i];
+                }
+            }
+        }
+        
+        return third_max;
+    }
+}
