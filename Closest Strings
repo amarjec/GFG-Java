@@ -1,0 +1,30 @@
+
+
+//User function Template for Java
+
+class Solution {
+    int shortestDistance(ArrayList<String> s, String word1, String word2) {
+        // code here
+         int mind = Integer.MAX_VALUE;
+        int ind1 = -1;
+        int ind2 = -1;
+        if(word1.equals(word2)){
+            return 0;
+        }
+        for(int i=0; i<s.size(); i++){
+            String curr = s.get(i);
+            if(curr.equals(word1)){
+                ind1 = i;
+            }
+            else if(curr.equals(word2)){
+                ind2 = i;
+            }
+            if(ind1 != -1 && ind2 != -1){
+                int diff = Math.abs(ind2 - ind1);
+                mind = Math.min(mind,diff);
+            }
+        }
+        return mind;
+    
+    }
+};
