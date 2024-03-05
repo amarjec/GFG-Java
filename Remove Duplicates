@@ -1,0 +1,18 @@
+
+
+//User function Template for Java
+
+class Solution {
+    String removeDups(String S) {
+        // code here
+        StringBuilder sb = new StringBuilder();
+        for (int i=0; i<S.length(); i++) {
+           char ch = S.charAt(i);  // ch ---> current char
+           // if char ch is not present in string sb then append(add it) it in sb string.
+           if (sb.indexOf(String.valueOf(ch)) == -1) {
+               sb.append(ch);
+           }
+        }
+        return sb.toString();
+    }
+}
