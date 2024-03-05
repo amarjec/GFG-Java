@@ -1,0 +1,29 @@
+
+
+//User function Template for Java
+class Solution{
+    public ArrayList<Integer> firstAndLast(int arr[], int n, int x){
+        // Code here
+        ArrayList<Integer> list = new ArrayList<>();
+        int first = -1;
+        int last = -1;
+        
+           for(int i = 0; i < n; i++) {
+               if(arr[i] == x) {
+                  if(first == -1) {
+                     first = i;
+                   }
+                  last = i;
+                }
+            }
+        
+        if(first == -1){
+            list.add(-1);
+            return list;
+        }
+        
+            list.add(first);
+            list.add(last);
+            return list;
+    }
+}
