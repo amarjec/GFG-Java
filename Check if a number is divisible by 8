@@ -1,0 +1,22 @@
+class Solution{
+    int DivisibleByEight(String s){
+        //code here
+        if(s.length()<3)
+        {
+            if(Integer.parseInt(s)%8==0)
+            return 1;
+            else
+            return -1;
+        }
+        else
+        {
+            String a=s.substring(s.length()-3);
+            {
+                if(Integer.parseInt(a)%8==0)
+                return 1;
+                else
+                return -1;
+            }
+        }
+    }
+}
