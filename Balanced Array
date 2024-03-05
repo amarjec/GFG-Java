@@ -1,0 +1,22 @@
+//User function Template for Java
+
+
+class Solution
+{
+    long minValueToBalance(long a[] ,int n)
+    {
+        int x = n/2;
+        int left_sum =0;
+        for (int i=0; i<x; i++) {
+            left_sum += a[i];
+        }
+        int right_sum =0;
+        for (int i=x; i<n; i++) {
+            right_sum += a[i];
+        }
+        if (right_sum>left_sum) {
+            return right_sum-left_sum;
+        }
+        return left_sum-right_sum;
+    }
+}
