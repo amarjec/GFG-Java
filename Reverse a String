@@ -1,0 +1,21 @@
+
+
+//User function Template for Java
+
+
+class Reverse
+{
+    // Complete the function
+    // str: input string
+    public static String reverseWord(String str)
+    {
+        // Reverse the string str
+        char ch;
+        String empty="";
+     for (int i=0; i<str.length(); i++)
+      {
+        ch= str.charAt(i);
+        empty= ch+empty; 
+      }return empty;
+    }
+}
