@@ -1,0 +1,47 @@
+
+
+//User function Template for Java
+
+class Solution{
+    static long sequence(int n){
+        // code here
+    //   long b = 1, a, sum =0;
+    //     for (int i = 1; i<=n; i++) {
+    //         a = 1;
+    //         for (int j = 1; j<=i; j++) {
+    //             a = a*b;
+    //             b++;
+    //         }
+    //         if (n<7) {
+    //             sum = sum + a;
+    //         }
+    //         else {
+    //             sum = (sum + a) % (1000000007);
+    //         }
+    //     }
+    //   return sum;
+        
+        long ct=1;
+        long sum=0;
+        long temp=1;
+        long number=1;
+        while(number<=n)
+        {
+            for(int i=0;i<number;i++)
+            {
+                temp=(ct*temp)%1000000007;
+                ct++;
+                
+            }
+            
+            sum=(sum+temp)%1000000007;
+          
+           temp=1;
+            
+            
+            number++;
+        }
+        return sum%1000000007;
+    
+    }
+}
