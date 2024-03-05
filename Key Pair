@@ -1,0 +1,29 @@
+
+
+//User function Template for Java
+
+
+class Solution {
+    boolean hasArrayTwoCandidates(int arr[], int n, int x) {
+        // code here
+        // this code give problem in timr complexicity
+        // for (int i=0; i<arr.length; i++) {
+        //     for (int j=i+1; j<arr.length; j++) {
+        //         if (arr[i] + arr[j] == x) {
+        //             return true;
+        //         }
+        //     }
+        // }
+        // return false;
+        
+         Arrays.sort(arr);
+        int i=0, j=n-1;
+        while(i<j) {
+            int sum=arr[i]+arr[j];
+            if(sum==x) return true;
+            else if(sum>x) j--;
+            else i++;
+        }return false;
+        
+    }
+}
