@@ -1,0 +1,41 @@
+
+class Solution
+{
+    //Function to find the smallest positive number missing from the array.
+    static int missingNumber(int arr[], int size)
+    {
+        // Your code here
+        
+        // this code is logicaly coorect but give runtime error
+        // for (int i=1; i<=size; i++) {
+        //     int count =0;
+        //     for (int j=0; j<arr.length; j++) {
+        //         if (i == arr[j]) {
+        //             count++;
+        //             break;
+        //         }
+        //     }
+        //     if (count == 0) {
+        //         return i;
+        //     }
+        // }
+        // return size+1;
+        
+        Arrays.sort(arr);
+        int count =0;
+        int miss=1;
+        for (int i=0; i<size; i++) {
+            if (arr[i] < 1) {
+                continue;
+            }
+            else if (arr[i] == miss) {
+                count++;
+                miss++;
+            }
+        }
+        if (count == size) {
+            return size+1;
+        }
+        return miss;
+    }
+}
