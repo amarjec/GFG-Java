@@ -1,0 +1,15 @@
+
+
+//User function Template for Java
+
+class Solution {
+    String printLargest(int n, String[] arr) {
+        // code here
+        Arrays.sort(arr, (a, b) -> (b+a).compareTo(a+b));
+        
+        StringBuilder s = new StringBuilder();
+        for(String str: arr) s.append(str);
+            
+        return s.toString();
+    }
+}
