@@ -1,0 +1,25 @@
+
+
+//User function Template for Java
+
+class Solution
+{
+    public List<String> AllPossibleStrings(String s)
+    {
+        // Code here
+   List<String> result=new ArrayList<>();
+        generateSubsequences(s, "", 0, result);
+        Collections.sort(result);
+        return result;
+    }
+    private void generateSubsequences(String s, String current, int index, List<String> result) {
+        if(index==s.length()) {
+            if(!current.isEmpty()) {
+                result.add(current);
+            }
+            return;
+        }
+        generateSubsequences(s, current+s.charAt(index), index+1, result);
+        generateSubsequences(s, current, index+1, result);
+    }
+}
