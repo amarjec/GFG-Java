@@ -1,0 +1,18 @@
+class Solution
+{
+    //Function to find the minimum indexed character.
+    public static int minIndexChar(String str, String patt)
+    {
+        // Your code here
+        int i=0;
+        int j=str.length();
+        
+        while (i<j) {
+            if (patt.contains(str.charAt(i)+"")){
+                return i;
+            }
+            i++;
+        }
+        return -1;
+    }
+}
