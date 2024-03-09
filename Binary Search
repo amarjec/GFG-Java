@@ -1,0 +1,35 @@
+// User function Template for Java
+
+class Solution {
+    int binarysearch(int arr[], int n, int k) {
+        // code here
+        int i=0;
+        int j=n-1;
+        while (i<j) {
+            
+            // searching from starting
+            if (arr[i]==k) {
+                return i;
+            }
+            else if (arr[i]<k) {
+                i++;
+            }
+            else if (arr[i]>k) {
+                return -1;
+            }
+            
+            // searching from endinga
+            if (arr[j] == k) {
+                return j;
+            }
+            else if (arr[j]>k) {
+                j--;
+            }
+            else if (arr[i]<k) {
+                return -1;
+            }
+        }
+        return -1;
+        
+    }
+}
