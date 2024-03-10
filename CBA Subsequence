@@ -1,0 +1,11 @@
+class Solution{
+	String cbaSubsequence(String S, int N) {
+		//Write your code here
+		
+	   char arr[] = S.toCharArray();
+	   Arrays.sort(arr);
+	   return String.valueOf(arr);
+	   
+	  
+	}
+}
